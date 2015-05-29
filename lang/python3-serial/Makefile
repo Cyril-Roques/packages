@@ -14,8 +14,8 @@ PKG_RELEASE:=1
 PKG_LICENSE:=Apache 2.0
 PKG_MAINTAINER:=Cyril Roques <cyril.roques@maplehightech.com>
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=@SF/pyserial
+PKG_SOURCE:=pyserial-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://pypi.python.org/packages/source/p/pyserial
 PKG_MD5SUM:=794506184df83ef2290de0d18803dd11
 
 PKG_BUILD_DEPENDS:=python3
