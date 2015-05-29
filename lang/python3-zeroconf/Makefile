@@ -16,7 +16,7 @@ PKG_LICENSE:=Apache 2.0
 PKG_MAINTAINER:=Cyril Roques <cyril.roques@maplehightech.com>
 
 PKG_SOURCE_VERSION:=$(PKG_REV)
-PKG_SOURCE_URL:=git://github.com/Cyril-Roques/git://github.com/
+PKG_SOURCE_URL:=git://github.com/Cyril-Roques/
 PKG_REV:=420b5b34aafee0fdf3b81877a999e4f4eb5b7f09
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_SOURCE_SUBDIR).tar.gz
