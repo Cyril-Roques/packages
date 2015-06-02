@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-setuptools
-PKG_VERSION:=2.7
+PKG_VERSION:=17.0
 PKG_RELEASE:=1
 
 PKG_LICENSE:=Apache 2.0
@@ -41,13 +41,21 @@ UNPACK_CMD=gzip -dc "$(DL_DIR)/$(PKG_SOURCE)" | tar -C $(PKG_BUILD_DIR) -xf -
 
 
 define Build/Compile
-	$(call Build/Compile/Py3Mod,pyserial-$(PKG_VERSION), \
+	$(call Build/Compile/Py3Mod,setuptools-$(PKG_VERSION), \
 		install --prefix="/usr" --root="$(PKG_INSTALL_DIR)", \
 	)
 
 endef
 
 define Package/python3-setuptools/install
+	$(INSTALL_DIR) $(HOST_PYTHON3_LIB_DIR)
+	$(CP) \
+	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
+            $(HOST_PYTHON3_LIB_DIR)/
+	$(INSTALL_DIR) $(PYTHON3_LIB_DIR)
+	$(CP) \
+	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
+	    $(PYTHON3_LIB_DIR)/
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) \
 	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \

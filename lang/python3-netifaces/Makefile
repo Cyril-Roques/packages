@@ -30,12 +30,11 @@ define Package/python3-netifaces
   CATEGORY:=Languages
   TITLE:=Portable network interface information
   URL:= https://bitbucket.org/al45tair/netifaces
-  DEPENDS:=+python3,python3-setuptools
+  DEPENDS:=+python3 +python3-setuptools
 endef
 
 define Package/python3-netifaces/description
-  It’s been annoying me for some time that there’s no easy way to get the address(es) of the machine’s network interfaces from Python. There is a good reason for this difficulty, which is that it is virtually impossible to do so in a portable manner. However, it seems to me that there should be a package you can easy_install that will take care of working out the details of doing so on the machine you’re using, then you can get on with writing Python code without concerning yourself with the nitty gritty of system-dependent low-level networking APIs.
-  This package attempts to solve that problem.
+  An easy way to get the addresses of the machine network interfaces from Python
 endef
 
 UNPACK_CMD=gzip -dc "$(DL_DIR)/$(PKG_SOURCE)" | tar -C $(PKG_BUILD_DIR) -xf -
