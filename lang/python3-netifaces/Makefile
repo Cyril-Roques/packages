@@ -30,7 +30,7 @@ define Package/python3-netifaces
   CATEGORY:=Languages
   TITLE:=Portable network interface information
   URL:= https://bitbucket.org/al45tair/netifaces
-  DEPENDS:=+python3
+  DEPENDS:=+python3,python3-setuptools
 endef
 
 define Package/python3-netifaces/description

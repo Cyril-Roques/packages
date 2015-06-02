@@ -7,34 +7,34 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-serial
+PKG_NAME:=python3-setuptools
 PKG_VERSION:=2.7
 PKG_RELEASE:=1
 
 PKG_LICENSE:=Apache 2.0
 PKG_MAINTAINER:=Cyril Roques <cyril.roques@maplehightech.com>
 
-PKG_SOURCE:=pyserial-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://pypi.python.org/packages/source/p/pyserial
-PKG_MD5SUM:=794506184df83ef2290de0d18803dd11
-PKG_SOURCE_SUBDIR:=pyserial-$(PKG_VERSION)
+PKG_SOURCE:=setuptools-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://pypi.python.org/packages/source/s/setuptools
+PKG_MD5SUM:=fd15d24ed1e4c95e56d8c6e812f3a84f
+PKG_SOURCE_SUBDIR:=setuptools-$(PKG_VERSION)
 
 PKG_BUILD_DEPENDS:=python3
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
-define Package/python3-serial
+define Package/python3-setuptools
   SUBMENU:=Python
   SECTION:=lang
   CATEGORY:=Languages
-  TITLE:=Python Serial Port Extension
-  URL:=http://pyserial.sourceforge.net
+  TITLE:=python3-setuptools
+  URL:=https://bitbucket.org/pypa/setuptools
   DEPENDS:=+python3
 endef
 
-define Package/python3-serial/description
-  serial port python bindings
+define Package/python3-setuptools/description
+  Easily download, build, install, upgrade, and uninstall Python packages
 endef
 
 UNPACK_CMD=gzip -dc "$(DL_DIR)/$(PKG_SOURCE)" | tar -C $(PKG_BUILD_DIR) -xf -
@@ -47,11 +47,11 @@ define Build/Compile
 
 endef
 
-define Package/python3-serial/install
+define Package/python3-setuptools/install
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) \
 	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
 	    $(1)$(PYTHON_PKG_DIR)/
 endef
 
-$(eval $(call BuildPackage,python3-serial))
+$(eval $(call BuildPackage,python3-setuptools))
